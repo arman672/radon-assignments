@@ -2,7 +2,7 @@ const propertyModel = require("../models/propertyModel")
 const orgModel = require("../models/organizationModel")
 const regionModel = require("../models/regionModel")
 
-//========create property=========
+//========create region=========
 const createRegion = async function(req, res){
     try {
         
@@ -19,11 +19,11 @@ const createRegion = async function(req, res){
             "propertyID" : propertyID
         }
        
-        const checkRegion = await propertyModel.findOne(query)
-
+        const checkRegion = await regionModel.findOne(query)
+        console.log(checkRegion)
         if(checkRegion) return res.status(400).send({msg: "region already exist"})
 
-        const savedData = await propertyModel.create(data)
+        const savedData = await regionModel.create(data)
         
 
         await propertyModel.findOneAndUpdate(

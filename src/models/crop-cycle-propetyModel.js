@@ -3,9 +3,9 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 
 const cropCyclePropertySchema = new mongoose.Schema({
     propertyId:{
-        type: ObjectId,
+        type: ObjectId
     },
-    crop:{
+    cropId:{
         type: ObjectId,
         required: true,
         ref: "Crop"
@@ -17,10 +17,6 @@ const cropCyclePropertySchema = new mongoose.Schema({
     cycleEnd:{
         type: String,
         required: true
-    },
-    activeMonths:{
-        type: [string],
-        enum:["jan", "feb","mar","apr","may", "jun","jul", "aug","sep","oct","nov","dec"]
     }
 },{timeStamp: true})
 

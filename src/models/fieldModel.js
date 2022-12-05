@@ -26,10 +26,6 @@ const fieldSchema = new mongoose.Schema({
     crop_cycle_fields:{
         type: [ObjectId],
         ref: "CropCycleField" 
-    },
-    active_crop:{
-        type: ObjectId,
-        ref: crop
     }
 },{timeStamp: true})
 

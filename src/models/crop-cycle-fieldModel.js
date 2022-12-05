@@ -2,10 +2,10 @@ const mongoose = require("mongoose")
 const ObjectId = mongoose.Schema.Types.ObjectId
 
 const cropCycleFieldSchema = new mongoose.Schema({
-    FeildId:{
-        type: ObjectId,
+    fieldId:{
+        type: ObjectId
     },
-    crop:{
+    cropId:{
         type: ObjectId,
         required: true,
         ref:"Crop"
@@ -17,10 +17,6 @@ const cropCycleFieldSchema = new mongoose.Schema({
     cycleEnd:{
         type: String,
         required: true
-    },
-    activeMonths:{
-        type: [string],
-        enum:["jan", "feb","mar","apr","may", "jun","jul", "aug","sep","oct","nov","dec"]
     }
 },{timeStamp: true})
 
